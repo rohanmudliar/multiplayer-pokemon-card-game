@@ -1,6 +1,7 @@
 const initScreenDom = document.getElementById('initScreen'),
     startGameDom = document.getElementById('initScreen__description'),
-    gameAreaDom = document.getElementById('gameArea');
+    gameAreaDom = document.getElementById('gameArea'),
+    shuffleDeck = document.getElementById('gameArea__shuffleCards');
 
 const audio = new Audio();
 
@@ -11,6 +12,7 @@ const modelObj = {
     textInternal: null,
     textCounter: '',
     textTimeout: null,
+    renderCards: '',
 };
 
 

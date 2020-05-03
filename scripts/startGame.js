@@ -10,6 +10,7 @@ modelObj.textInternal = setInterval(() => {
         modelObj.textArray.push(startGameDom.innerHTML);
     } else {
         clearInterval(modelObj.textInternal);
+        fetchPokemon();
     };
 }, 40);
 
