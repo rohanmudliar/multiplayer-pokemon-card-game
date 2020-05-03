@@ -40,6 +40,7 @@ function startGameEvent(_event) {
                     clearTimeout(modelObj.textTimeout);
                     initScreenDom.classList.add('hidden');
                     startGameDom.classList.add('hidden');
+                    gameAreaDom.classList.remove('hidden');
                     gameAreaDom.style.opacity = 1;
                 }, 500);
 
