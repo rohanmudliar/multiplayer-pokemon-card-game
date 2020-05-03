@@ -1,0 +1,89 @@
+:root {
+    --color-primary: #626262;
+    --color-white: #eee;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+*::selection {
+    background: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: var(--color-white);
+    font-family: 'Roboto', sans-serif;
+}
+
+*:focus {
+    user-select: none;
+    outline: none;
+    outline: 0;
+}
+
+.container {
+    height: 100vh;
+    background-color: var(--color-white);
+    position: relative;
+}
+
+.initScreen {
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: all .5s;
+}
+
+.initScreen__description {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    font-family: 'Audiowide', cursive;
+    font-size: 5rem;
+    color: var(--color-white);
+}
+
+.gameArea {
+    /* background-color: red; */
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 15rem 1fr; /*Before distributing cards */
+    gap: 2rem; 
+   /* grid-template-rows: repeat(2, 1fr); /* After distributing cards
+    gap: 4rem;*/;
+    opacity: 0;
+    transition: all .3s;
+}
+
+.gameArea > * {
+    background-color:yellow;
+}
+
+.gameArea__shuffleCards {
+    /* background-color: yellow; */
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+}
+
+.hidden {
+    display: none;
+}
