@@ -32,6 +32,7 @@ function startGameEvent(_event) {
                 initScreenDom.style.opacity = 0;
 
                 audio.src = './audios/Theme_song.mp3';
+                audio.volume = 0.2;
                 audio.play();
 
                 audio.addEventListener("ended", () => audio.play());

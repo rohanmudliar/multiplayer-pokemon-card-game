@@ -6,7 +6,7 @@ const fetchPokemon = () => {
 
     };
     Promise.all(promises).then(results => {
-        const pokemon = results.map(data => ({
+        modelObj.pokemonData = results.map(data => ({
             name: data.name,
             id: data.id,
             image: data.sprites['front_default'],
@@ -18,7 +18,7 @@ const fetchPokemon = () => {
             attack: data.stats[4].base_stat,
             hp: data.stats[5].base_stat
         }));
-        displayPokemon(pokemon);
+        displayPokemon(modelObj.pokemonData);
     });
 };
 
