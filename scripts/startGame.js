@@ -43,6 +43,7 @@ function startGameEvent(_event) {
                     startGameDom.classList.add('hidden');
                     gameAreaDom.classList.remove('hidden');
                     gameAreaDom.style.opacity = 1;
+                    shuffleDeck.addEventListener('click', shuffleCards);
                 }, 500);
 
             };

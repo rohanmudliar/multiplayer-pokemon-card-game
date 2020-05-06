@@ -16,7 +16,7 @@ function createShuffleCardsDom(_pokeArray) {
     };
 
     shuffleDeck.innerHTML = modelObj.renderCards;
-    shuffleDeck.addEventListener('click', shuffleCards);
+
 };
 
 const shuffleCards = () => {
