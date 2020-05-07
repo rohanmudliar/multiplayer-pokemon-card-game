@@ -5,7 +5,10 @@ const initScreenDom = document.getElementById('initScreen'),
     playerArea1 = document.getElementById('gameArea__player1'),
     playerArea2 = document.getElementById('gameArea__player2');
 
-const audio = new Audio();
+const enterSound = new Audio();
+const themeSong = new Audio();
+const choosePokemonSound = new Audio();
+
 
 const modelObj = {
     startGameText: 'Press Enter to start the game.',
@@ -14,6 +17,7 @@ const modelObj = {
     textInternal: null,
     textCounter: '',
     textTimeout: null,
+    rotateAngle: 0,
     renderCards: '',
     pokemonData: null,
     player1DeckDisplay: '',

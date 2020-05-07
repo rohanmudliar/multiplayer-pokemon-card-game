@@ -16,8 +16,8 @@ modelObj.textInternal = setInterval(() => {
 
 function startGameEvent(_event) {
     if (_event.keyCode === 13) {
-        audio.src = './audios/enter.mp3';
-        audio.play();
+        enterSound.src = './audios/enter.mp3';
+        enterSound.play();
 
         startGameDom.innerHTML = modelObj.textArray[modelObj.textArray.length - 1];
         modelObj.textCounter = modelObj.textArray.length;
@@ -31,11 +31,11 @@ function startGameEvent(_event) {
                 startGameDom.innerHTML = '';
                 initScreenDom.style.opacity = 0;
 
-                audio.src = './audios/Theme_song.mp3';
-                audio.volume = 0.2;
-                audio.play();
+                themeSong.src = './audios/Theme_song.mp3';
+                themeSong.volume = 0.2;
+                themeSong.play();
 
-                audio.addEventListener("ended", () => audio.play());
+                themeSong.addEventListener("ended", () => themeSong.play());
 
                 modelObj.textTimeout = setTimeout(() => {
                     clearTimeout(modelObj.textTimeout);
@@ -45,7 +45,6 @@ function startGameEvent(_event) {
                     gameAreaDom.style.opacity = 1;
                     shuffleDeck.addEventListener('click', shuffleCards);
                 }, 500);
-
             };
         }, 40);
         document.removeEventListener('keydown', startGameEvent);
