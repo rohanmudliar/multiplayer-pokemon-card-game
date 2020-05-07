@@ -21,7 +21,6 @@ html {
 
 body {
     box-sizing: border-box;
-    background-color: var(--color-white);
     font-family: 'Roboto', sans-serif;
 }
 
@@ -33,7 +32,12 @@ body {
 
 .container {
     height: 100vh;
-    background-color: var(--color-white);
+    /* background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/background1.png') no-repeat center;
+    background-size: cover; */
+
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/background2.jpg') no-repeat center;
+    background-size: cover;
+    
     position: relative;
 }
 
@@ -122,7 +126,7 @@ body {
     background-size: cover;
 } 
 
-.card:hover .cardFrontSide {
+/* .card:hover .cardFrontSide {
     transform: rotateY(0);
     cursor: pointer;
 }
@@ -130,7 +134,7 @@ body {
 .card:hover .cardBackSide {
     transform: rotateY(-180deg);
     cursor: pointer;
-}
+} */
 
 .cardContainer {
     width: 100%;
@@ -149,6 +153,7 @@ body {
     height: 100%;
     border-top-left-radius: .5rem;
     border-top-right-radius: .5rem;
+    text-transform: capitalize;
 }
 
 .pokemonSprite {
@@ -180,6 +185,9 @@ body {
     grid-template-columns: 1fr 1rem 1fr;
     justify-content: center;
     align-items: center;
+    border: 2px solid transparent;
+    transition: border .3s;
+    padding: .3rem;
 }
 
 .pokemonDetails > * > * {
@@ -300,4 +308,28 @@ body {
 
 .hidden {
     display: none !important;
+}
+
+.detailsHover:hover {
+    cursor: pointer;
+    border: 2px solid darkgray;
+}
+
+.active {
+    background-color: #eeeeee50;
+}
+
+.winner {
+    opacity: .7;
+    box-shadow: 0rem 0rem 1rem rgb(0, 255, 55);
+}
+
+.looser {
+    opacity: .3;
+    box-shadow: 0rem 0rem 1rem rgb(255, 1, 1);
+}
+
+.draw {
+    opacity: .5;
+    box-shadow: 0rem 0rem 1rem rgb(144, 144, 144);
 }
