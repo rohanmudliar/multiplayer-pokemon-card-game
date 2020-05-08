@@ -1,6 +1,10 @@
-const playerDeck = (totalCards) => {
-    for (var i = 1; i <= totalCards; i++) {
-        if (i <= totalCards / 2) {
+/*
+* This function is executed when the deck of cards is shuffled.
+* @param _totalCards is of type array. Pass the pokedata array.
+*/
+const playerDeck = (_totalCards) => {
+    for (var i = 1; i <= _totalCards; i++) {
+        if (i <= _totalCards / 2) {
             modelObj.player1DeckDisplay += cardDomSkeleton(modelObj.pokemonData[i - 1]);
             continue;
         };
@@ -20,13 +24,19 @@ const playerDeck = (totalCards) => {
         playerArea1.style.opacity = 1;
         playerArea2.style.opacity = 1;
 
-        gameCode();
+        const timeout = setTimeout(() => {
+            clearTimeout(timeout);
+            playGame();
+        }, 2000);
     });
 };
-
-
+/*
+* This function is used to create a single Poke Card
+* @param _pokeData is of type object. Pass the pokedata as a object and it returns a DOM card.
+*/
 function cardDomSkeleton(_pokeData) {
     const { id, name, hp, speed, attack, defence, type } = _pokeData;
+
     return `<div class="card">
                 <div class="cardFrontSide">
                     <div class="cardContainer ${type}">
@@ -65,9 +75,4 @@ function cardDomSkeleton(_pokeData) {
                 <div class="cardBackSide">
                 </div>
             </div>`
-};
-
-
-function threeDigitConverter(_id) {
-    return ('00' + _id).slice(-3);
 };

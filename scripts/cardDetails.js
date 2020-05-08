@@ -1,13 +1,16 @@
-const randomNumberArray = [];
-
+/*
+* This function fetches the pokemon details from the API.
+*/
 const fetchPokemon = () => {
     const promises = [];
+
     for (let i = 1; i <= 8; i++) {
-        randomNumberArray.push(Math.floor(Math.random() * 149) + 1)
-        const url = `https://pokeapi.co/api/v2/pokemon/${randomNumberArray[i - 1]}`;
+        modelObj.randomNumberArray.push(Math.floor(Math.random() * 149) + 1)
+        const url = `https://pokeapi.co/api/v2/pokemon/${modelObj.randomNumberArray[i - 1]}`;
         promises.push(fetch(url).then(response => { return response.json(); }));
 
     };
+
     Promise.all(promises).then(results => {
         modelObj.pokemonData = results.map(data => ({
             name: data.name,
@@ -24,9 +27,10 @@ const fetchPokemon = () => {
         createShuffleCardsDom(modelObj.pokemonData);
     });
 };
-
-modelObj.renderCards = '';
-
+/*
+* This function is executed when all the pokedata is fetched from the API
+* @param _pokeArray is of type array. It passes the pokemonData array.
+*/
 function createShuffleCardsDom(_pokeArray) {
     for (let i = 1; i <= _pokeArray.length; i++) {
         modelObj.rotateAngle = (Math.floor(Math.random() * 720)) - 360;
@@ -38,24 +42,22 @@ function createShuffleCardsDom(_pokeArray) {
 
     shuffleDeck.innerHTML = modelObj.renderCards;
 };
-
+/*
+* This function is executed when the deck of Cards needs to be shuffled.
+*/
 const shuffleCards = () => {
     shuffleDeck.removeEventListener('click', shuffleCards);
     const cardDeck = document.querySelectorAll('.gameArea__shuffleCards-card');
     const totalCards = cardDeck.length;
     let counter = 0;
     const shuffleInterval = setInterval(() => {
-        if (counter % 2 == 0) {
-            cardDeck[counter].style.top = '15rem';
-        } else {
-            cardDeck[counter].style.top = '-15rem';
-        };
+
+        (counter % 2 == 0) ? cardDeck[counter].style.top = '15rem' : cardDeck[counter].style.top = '-15rem';
 
         counter++;
 
         if (counter == totalCards) {
             clearInterval(shuffleInterval);
-
             const delay = setTimeout(() => {
                 clearTimeout(delay);
                 shuffleDeck.style.opacity = 0;
@@ -68,14 +70,4 @@ const shuffleCards = () => {
             }, 1000);
         };
     }, 300);
-};
-
-function shuffleArray(array) {
-    // This is implementation of the Durstenfeld shuffle, an optimized version of Fisher-Yates.
-    for (let i = array.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        let temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    };
 };

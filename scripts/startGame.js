@@ -13,7 +13,10 @@ modelObj.textInternal = setInterval(() => {
         fetchPokemon();
     };
 }, 40);
-
+/*
+* This function executes when there is a keydown event.
+* @param _event is of type object. It passes the event.
+*/
 function startGameEvent(_event) {
     if (_event.keyCode === 13) {
         enterSound.src = './audios/enter.mp3';
