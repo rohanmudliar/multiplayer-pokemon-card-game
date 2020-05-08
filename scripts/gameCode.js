@@ -13,7 +13,8 @@ function playGame() {
     player2.classList.remove('active');
     player1.classList.add('active');
 
-    modelObj.detailsDomArray = player1.children[modelObj.currentPhaseNo].children[0].children[0].children[2].children;
+    // modelObj.detailsDomArray = player1.children[modelObj.currentPhaseNo].children[0].children[0].children[2].children;
+    modelObj.detailsDomArray = (document.querySelector(`.${player1.classList[0]} .pokemonDetails`)).children;
 
     for (let i = 0; i < modelObj.detailsDomArray.length; i++) {
         modelObj.detailsDomArray[i].classList.add('detailsHover');
