@@ -17,23 +17,32 @@
         </div>
 
         <div id="gameArea" class="gameArea hidden">
-            <div id="gameArea__player1" class="gameArea__player1 hidden">
-
-            </div>
+            <div id="gameArea__player1" class="gameArea__player1 hidden"></div>
 
             <div id="gameArea__shuffleCards" class="gameArea__shuffleCards"></div>
 
-            <div id="gameArea__player2" class="gameArea__player2 hidden">
+            <div id="gameArea__player2" class="gameArea__player2 hidden"></div>
 
+            <div id="player1Avatar" class="player1Avatar hidden">
+                <img id="player1AvatarImg" src="./images/player1.jpg">
+                <div id="playerName1" class="playerName1">
+                    Player 1
+                </div>
+            </div>
+            <div id="player2Avatar" class="player2Avatar hidden">
+                <img id="player2AvatarImg" src="./images/player2.png">
+                <div id="playerName2" class="playerName2">
+                    Player 2
+                </div>
             </div>
         </div>
-    </div>
-    <script src="./main.js"></script>
-    <script src="./scripts/helperFunctions.js"></script>
-    <script src="./scripts/startGame.js"></script>
-    <script src="./scripts/cardDetails.js"></script>
-    <script src="./scripts/playerDeck.js"></script>
-    <script src="./scripts/gameCode.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="./main.js"></script>
+        <script src="./scripts/helperFunctions.js"></script>
+        <script src="./scripts/startGame.js"></script>
+        <script src="./scripts/cardDetails.js"></script>
+        <script src="./scripts/playerDeck.js"></script>
+        <script src="./scripts/gameCode.js"></script>
 </body>
 
 </html>

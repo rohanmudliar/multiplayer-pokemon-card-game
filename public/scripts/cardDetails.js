@@ -46,14 +46,11 @@ function createShuffleCardsDom(_pokeArray) {
 * This function is executed when the deck of Cards needs to be shuffled.
 */
 const shuffleCards = () => {
-    shuffleDeck.removeEventListener('click', shuffleCards);
     const cardDeck = document.querySelectorAll('.gameArea__shuffleCards-card');
     const totalCards = cardDeck.length;
     let counter = 0;
     const shuffleInterval = setInterval(() => {
-
-        (counter % 2 == 0) ? cardDeck[counter].style.top = '15rem' : cardDeck[counter].style.top = '-15rem';
-
+        (counter % 2 == 0) ? cardDeck[counter].style.top = '18rem' : cardDeck[counter].style.top = '-18rem';
         counter++;
 
         if (counter == totalCards) {
@@ -63,6 +60,8 @@ const shuffleCards = () => {
                 shuffleDeck.style.opacity = 0;
                 const opacityTimeout = setTimeout(() => {
                     clearTimeout(opacityTimeout);
+                    player1Avatar.classList.add('hidden');
+                    player2Avatar.classList.add('hidden');
                     shuffleDeck.classList.add('hidden');
                     gameAreaDom.classList.add('afterShuffling');
                     playerDeck(totalCards);

@@ -1,0 +1,27 @@
+{
+  "name": "multiplayer-pokemon-card-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rohanmudliar/multiplayer-pokemon-card-game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rohanmudliar/multiplayer-pokemon-card-game/issues"
+  },
+  "homepage": "https://github.com/rohanmudliar/multiplayer-pokemon-card-game#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0",
+    "path": "^0.12.7",
+    "shortid": "^2.2.15",
+    "socket.io": "^2.3.0"
+  }
+}

@@ -1,7 +1,4 @@
 modelObj.startGameTextArray = modelObj.startGameText.split('');
-
-document.addEventListener('keydown', startGameEvent);
-
 modelObj.textCounter = -1;
 modelObj.textInternal = setInterval(() => {
     modelObj.textCounter++;
@@ -10,7 +7,8 @@ modelObj.textInternal = setInterval(() => {
         modelObj.textArray.push(startGameDom.innerHTML);
     } else {
         clearInterval(modelObj.textInternal);
-        fetchPokemon();
+        document.addEventListener('keydown', startGameEvent);
+        // fetchPokemon();
     };
 }, 40);
 /*
@@ -46,10 +44,14 @@ function startGameEvent(_event) {
                     startGameDom.classList.add('hidden');
                     gameAreaDom.classList.remove('hidden');
                     gameAreaDom.style.opacity = 1;
-                    shuffleDeck.addEventListener('click', shuffleCards);
+                    // shuffleDeck.addEventListener('click', shuffleCards);
                 }, 500);
             };
         }, 40);
         document.removeEventListener('keydown', startGameEvent);
+
+        socket.emit('joinServer', result => {
+            modelObj.playerId = result.id;
+        });
     };
 };
