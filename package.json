@@ -19,7 +19,7 @@
   "homepage": "https://github.com/rohanmudliar/multiplayer-pokemon-card-game#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.7",
     "path": "^0.12.7",
     "shortid": "^2.2.15",
     "socket.io": "^2.3.0"
