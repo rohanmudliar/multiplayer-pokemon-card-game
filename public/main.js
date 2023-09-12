@@ -63,6 +63,7 @@ socket.on("playerConnected", data => {
 
 
     if (data.length == 2) {
+        document.getElementById("gameArea__waitingMessage").style.display = "none";
         player1Avatar.classList.remove('hidden');
         player2Avatar.classList.remove('hidden');
         setTimeout(() => {
